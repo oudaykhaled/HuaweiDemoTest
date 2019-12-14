@@ -1,0 +1,11 @@
+{
+	"client":{
+		"cp_id":"890852200000000072",
+		"product_id":"9105385871708313373",
+		"client_id":"250618921634234432",
+		"client_secret":"8FD7A6057A6123DCB84A8D0C012FB815799DF5E8ACA6B561727536BB0BAB606A",
+		"app_id":"101485139",
+		"package_name":"com.ouday.huawei"
+	},
+	"configuration_version":"1.0"
+}
