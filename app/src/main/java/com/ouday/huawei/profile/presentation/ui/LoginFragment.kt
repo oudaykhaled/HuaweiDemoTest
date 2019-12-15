@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.huawei.hms.support.api.hwid.SignInHuaweiId
@@ -15,17 +16,24 @@ import com.ouday.huawei.core.utils.Auth
 import com.ouday.huawei.core.utils.HuaweiSdkWrapper
 import com.ouday.huawei.core.utils.SecurePreferences
 import com.ouday.huawei.core.presentation.BaseFragment
+import com.ouday.huawei.profile.presentation.viewmodel.ProfileViewModel
+import com.ouday.test.core.presentation.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_login.*
 import javax.inject.Inject
 
 class LoginFragment : BaseFragment() {
 
 
+    private lateinit var viewModel: ProfileViewModel
     @Inject
     lateinit var pref : SecurePreferences
 
     @Inject
     lateinit var huaweiSdkWrapper : HuaweiSdkWrapper
+
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
 
     private lateinit var navController: NavController
 
@@ -39,6 +47,8 @@ class LoginFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProviders.of(activity!!, viewModelFactory).get(ProfileViewModel::class.java)
+
         navController = Navigation.findNavController(view)
 
         huaweiSdkWrapper.init()
@@ -46,10 +56,11 @@ class LoginFragment : BaseFragment() {
 
 
         btnLogin.setOnClickListener {
+            showLoading()
             huaweiSdkWrapper.signin(this)
         }
 
-        if (Auth.getProfile(pref) != null){
+        if (viewModel.getProfile(pref) != null){
             navController.navigate(R.id.action_loginFragment_to_returningFragment)
         }
     }
@@ -66,11 +77,13 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun onFailedToLogin() {
-        Auth.saveProfile(pref, null)
+        dismissLoading()
+        viewModel.saveProfile(pref, null)
     }
 
     private fun onLoginSuccessfully(signInHuaweiId: SignInHuaweiId) {
-        Auth.saveProfile(pref, signInHuaweiId)
+        dismissLoading()
+        viewModel.saveProfile(pref, signInHuaweiId)
         navController.navigate(R.id.action_loginFragment_to_returningFragment)
 
     }

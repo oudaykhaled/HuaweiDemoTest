@@ -17,12 +17,10 @@ import com.huawei.hms.support.api.hwid.SignInHuaweiId
 import com.huawei.hms.support.api.iap.json.Iap
 import com.huawei.hms.support.api.iap.json.IapApiException
 import com.ouday.huawei.Constant
-import com.ouday.huawei.REQ_CODE_BUY
 import org.json.JSONException
 import org.json.JSONObject
 import javax.inject.Inject
 
-const val REQUEST_SIGN_IN_LOGIN_CODE = 8888
 const val REQ_CODE_BUY = 777
 const val TAG = "HuaweiSdkWrapper"
 
