@@ -1,4 +1,4 @@
-package com.ouday.huawei.play.presentation.ui
+package com.ouday.huawei.play
 
 import android.content.res.Configuration
 import android.os.Bundle

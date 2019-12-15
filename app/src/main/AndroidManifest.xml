@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:screenOrientation="portrait"
-            android:name=".play.presentation.ui.VideoPlayerActivity"/>
+            android:name=".play.VideoPlayerActivity"/>
         <activity
             android:name=".profile.presentation.ui.ProfileActivity"
             android:screenOrientation="portrait" />

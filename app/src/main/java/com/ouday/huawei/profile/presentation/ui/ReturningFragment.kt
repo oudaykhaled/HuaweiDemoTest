@@ -13,7 +13,7 @@ import com.ouday.huawei.R
 import com.ouday.huawei.core.utils.Auth
 import com.ouday.huawei.core.utils.HuaweiSdkWrapper
 import com.ouday.huawei.core.utils.SecurePreferences
-import com.ouday.huawei.play.presentation.ui.VideoPlayerActivity
+import com.ouday.huawei.play.VideoPlayerActivity
 import com.ouday.huawei.core.presentation.BaseFragment
 import kotlinx.android.synthetic.main.fragment_returning.*
 import javax.inject.Inject
