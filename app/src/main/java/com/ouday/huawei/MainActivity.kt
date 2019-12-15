@@ -26,6 +26,7 @@ import org.json.JSONObject
 import java.security.SecureRandom
 import java.util.*
 import com.ouday.huawei.common.*
+import com.ouday.huawei.profile.presentation.ui.ProfileActivity
 
 
 const val REQUEST_SIGN_IN_LOGIN_CODE = 8888
@@ -55,9 +56,14 @@ class MainActivity : AppCompatActivity() {
         btn_AuthSingIn.setOnClickListener { authSignIn() }
         btn_Logout.setOnClickListener { hwLogout() }
         btnListItems.setOnClickListener { initProduct() }
-        btnBuy.setOnClickListener {         getBuyIntent(this, "ConsumeProduct1001", 1)
+        btnBuy.setOnClickListener {
+            getBuyIntent(this, "ConsumeProduct1001", 1)
         }
 
+        btnStart.setOnClickListener {
+            var intent = Intent(MainActivity@this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

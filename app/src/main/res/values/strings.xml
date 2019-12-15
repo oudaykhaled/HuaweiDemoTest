@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">OudayTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="click_to_login">Click the below button to login</string>
 </resources>
