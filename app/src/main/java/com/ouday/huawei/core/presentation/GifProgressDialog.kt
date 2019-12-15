@@ -23,7 +23,7 @@ class GifProgressDialog(private val context: Context) {
             val view = LayoutInflater.from(context).inflate(R.layout.dialog_gif, null)
             try {
                 var gifDrawable: GifDrawable?
-                gifDrawable = GifDrawable(context.resources, R.drawable.ic_loading)
+                gifDrawable = GifDrawable(context.resources, R.drawable.loading)
                 gifDrawable.loopCount = 65535
 
             } catch (e: IOException) {
