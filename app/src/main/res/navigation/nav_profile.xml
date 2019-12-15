@@ -5,9 +5,22 @@
     android:id="@+id/nav_profile"
     app:startDestination="@id/loginFragment">
 
+
+
+
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.ouday.huawei.profile.presentation.ui.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_returningFragment"
+            app:destination="@id/returningFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/returningFragment"
+        android:name="com.ouday.huawei.profile.presentation.ui.ReturningFragment"
+        android:label="fragment_returning"
+        tools:layout="@layout/fragment_returning" />
 </navigation>

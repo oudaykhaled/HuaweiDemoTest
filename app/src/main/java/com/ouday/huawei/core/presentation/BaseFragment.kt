@@ -1,5 +1,6 @@
-package com.ouday.test.core.presentation
+package com.ouday.huawei.core.presentation
 
+import com.ouday.test.core.presentation.GifProgressDialog
 import dagger.android.support.DaggerFragment
 
 const val DEFAULT_DIALOG_TAG = "DEFAULT_DIALOG_TAG"
